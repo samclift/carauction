@@ -11,7 +11,7 @@
     <%= f.input :address1, label: "Address" %>
     <%= f.input :address2, label: "Address" %>
     <%= f.input :region, default: "Auckland", collection: [ "Auckland", "Wellington", "Christchurch" ] %>
-    <%= f.input :country %>
+    <%= f.input :country, default: "New Zealand", collection: [ "New Zealand", "Australia" ] %>
     <%= f.input :suburb %>
     <%= f.input :postcode %>
     <%= f.input :home_phone, as: 'tel' %>
