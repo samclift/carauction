@@ -1,7 +1,10 @@
 Carauction::Application.routes.draw do
+  resources :items
+
   devise_for :users
-  get "pages/home"
+  
   get 'about' => 'pages#about'
+  get 'browse' => 'items#index'
 
   root :to => 'pages#home'
 
