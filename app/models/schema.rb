@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20131103065037) do
     t.string   "suburb"
     t.integer  "postcode"
     t.text     "region"
+    t.text     "country"
     t.integer  "home_phone"
     t.integer  "mobile_phone"
     t.integer  "dob_day"
