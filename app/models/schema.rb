@@ -11,24 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131105072319) do
+ActiveRecord::Schema.define(version: 20131103065037) do
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
-    t.string   "first_name",                          null: false
-    t.string   "last_name",                           null: false
-    t.string   "address1",                            null: false
-    t.string   "address2",                            null: false
-    t.string   "suburb",                              null: false
-    t.string   "postcode",                            null: false
-    t.string   "region",                              null: false
-    t.string   "country",                             null: false
-    t.string   "home_phone",                          null: false
-    t.string   "mobile_phone",                        null: false
-    t.string   "dob_day",                             null: false
-    t.string   "dob_month",                           null: false
-    t.string   "dob_year",                            null: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.text     "address1"
+    t.text     "address2"
+    t.string   "suburb"
+    t.integer  "postcode"
+    t.text     "region"
+    t.integer  "home_phone"
+    t.integer  "mobile_phone"
+    t.integer  "dob_day"
+    t.integer  "dob_month"
+    t.integer  "dob_year"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -37,6 +36,8 @@ ActiveRecord::Schema.define(version: 20131105072319) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

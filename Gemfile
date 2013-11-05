@@ -18,6 +18,7 @@ gem 'rails', '4.0.1'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'simple_form'
+gem 'country_select'
 
 group :doc do
   gem 'sdoc', require: false

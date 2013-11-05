@@ -1,21 +1,24 @@
-class DeviseCreateUsers < ActiveRecord::Migration
-  def change
+class AddDeviseToUsers < ActiveRecord::Migration
+  def self.up
     create_table(:users) do |t|
       ## Database authenticatable
       t.string :email,              :null => false, :default => ""
       t.string :encrypted_password, :null => false, :default => ""
-      t.string :first_name
-      t.string :last_name
-      t.text :address1
-      t.text :address2
-      t.string :suburb
-      t.integer :postcode
-      t.text :region
-      t.integer :home_phone
-      t.integer :mobile_phone
-      t.integer :dob_day
-      t.integer :dob_month
-      t.integer :dob_year
+
+      ## Sam's inclusions
+      t.string   :first_name,       :null => false
+      t.string   :last_name,        :null => false
+      t.string   :address1,         :null => false
+      t.string   :address2,         :null => false
+      t.string   :suburb,           :null => false
+      t.string   :postcode,         :null => false
+      t.string   :region,           :null => false
+      t.string   :country,          :null => false
+      t.string   :home_phone,       :null => false
+      t.string   :mobile_phone,     :null => false
+      t.string   :dob_day,          :null => false
+      t.string   :dob_month,        :null => false
+      t.string   :dob_year,         :null => false
 
       ## Recoverable
       t.string   :reset_password_token
@@ -43,12 +46,19 @@ class DeviseCreateUsers < ActiveRecord::Migration
       # t.datetime :locked_at
 
 
-      t.timestamps
+      # Uncomment below if timestamps were not included in your original model.
+      # t.timestamps
     end
 
     add_index :users, :email,                :unique => true
     add_index :users, :reset_password_token, :unique => true
     # add_index :users, :confirmation_token,   :unique => true
     # add_index :users, :unlock_token,         :unique => true
+  end
+
+  def self.down
+    # By default, we don't want to make any assumption about how to roll back a migration when your
+    # model already existed. Please edit below which fields you would like to remove in this migration.
+    raise ActiveRecord::IrreversibleMigration
   end
 end
